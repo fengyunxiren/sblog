@@ -19,7 +19,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/gs/djobs/djobs/datas/mydata.db',  # Or path to database file if using sqlite3.
+        'NAME': '/home/feng/wyc/django/sblog/datas/mydata.db',  # Or path to database file if using sqlite3.
         'USER': '',                       # Not used with sqlite3.
         'PASSWORD': '',                   # Not used with sqlite3.
         'HOST': '',                       # Set to empty string for localhost. Not used with sqlite3.
@@ -63,7 +63,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = 'static'
+STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -74,7 +74,8 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/gs/djobs/static',
+    '/home/feng/wyc/django/sblog/static',
+   # os.path.join(os.path.dirname(__file__),'../static/')
 )
 
 # List of finder classes that know how to find static files in
@@ -90,8 +91,8 @@ SECRET_KEY = 'c@ys*2sff-a8cptyp*-#(l!1_$!zw1z650emky6bmbwp1n-%r9'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.filesystem.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
 
@@ -115,8 +116,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/home/gs/djobs/templates",
-    "/home/gs/djobs/templates/simpleblog",
+    "/home/feng/wyc/django/sblog/templates",
+    "/home/feng/wyc/django/sblog/templates/simpleblog",
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

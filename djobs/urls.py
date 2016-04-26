@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from django.conf import settings
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
 urlpatterns = patterns(('djobs.views'),
@@ -14,6 +14,7 @@ urlpatterns = patterns(('djobs.views'),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     # Uncomment the next line to enable the admin:
+    url(r'grappelli/',include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^comments/', include('django.contrib.comments.urls')),
 )
@@ -26,6 +27,7 @@ urlpatterns += patterns((''),
     #静态文件
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
             {'document_root': settings.STATIC_ROOT}
-            # {'document_root': '/home/gs/djobs/static/'}
+             #{'document_root': '/home/feng/wyc/django/sblog/static/'}
     ),
 )
+urlpatterns+=staticfiles_urlpatterns()
